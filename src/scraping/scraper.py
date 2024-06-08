@@ -16,12 +16,18 @@ def parse_product(product):
     title= product.find("a",class_="title").text.strip()
     description = product.find("p",class_="description").text.strip()
     price = product.find("h4",class_="price").text.strip()
+    
+    price_numeric = float(price.replace("$", "").replace(",", ""))
+    discounted_price = price_numeric *0.7
     return{
         "title":title,
         "description":description,
         "price":price,
+        "discounted_price": "${:,.2f}".format(discounted_price)
         
     }
+    
+
     
 def scrape(url):
   
@@ -39,14 +45,13 @@ def scrape(url):
     
 base_url ="https://webscraper.io/test-sites/e-commerce/allinone"  
 
-
-
 df = scrape(base_url)
 
-
+print("All products:")
 print(df)
 
-df.to_csv("data/raw/products.csv", index=False)
+
+
 
 
 

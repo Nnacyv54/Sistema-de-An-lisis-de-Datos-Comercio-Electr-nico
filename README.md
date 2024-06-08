@@ -1,28 +1,74 @@
- Descripción del Proyecto:
- El objetivo es desarrollar un sistema que automáticamente extraiga datos de productos y
- precios de una tiendas en línea, almacene esos datos, y realice análisis para identificar
- tendencias, comparar precios y generar informes.
- Componentes del proyecto
- 1.
- WebScraping (Lección 9):
- ○ Utilizar BeautifulSoup para extraer datos de productos, precios y disponibilidad
- de varias tiendas en línea.
- 2. ManejodeDatosconPandas(Lección 8):
- ○ Usar Pandas para limpiar, transformar, y estructurar los datos extraídos en
- DataFrames.
- ○ Realizar análisis estadísticos básicos y avanzados para comparar precios y evaluar
- tendencias.
- 3. Funciones y Decoradores (Lecciones 4 y 7):
- ○ Crearfunciones para automatizar el proceso de análisis de datos.
- ○ Utilizar decoradores para añadir funcionalidades, como logging o medidas de
- tiempo de ejecución a las funciones críticas.
- 4. Variables, Bucles y Condicionales (Lecciones 2 y 3):
- ○ Implementar bucles y condicionales para manejar la lógica de extracción y
- procesamiento de datos, como iterar sobre diferentes páginas de productos y
- manejar errores de datos.
- 5. ManejodeArchivos (Lección 5):
- ○ Leer y escribir datos en archivos CSV o Excel, permitiendo que los usuarios
- guarden y revisen análisis anteriores.
- 6. MódulosyPaquetes (Lección 6):
- ○ Organizar el código en módulosypaquetes, separando las funcionalidades como
- scraping, análisis, y reporte en diferentes módulos
+# Scraping Web de Productos.
+
+Este proyecto realiza scraping de datos de productos de un sitio web, limpia y analiza los datos, y los guarda en archivos CSV.
+
+## Requisitos.
+
+- Python 3.7+
+- pandas
+- beautifulsoup4
+- requests
+- matplotlib
+- time
+- logging
+
+## Instalacion.
+
+Para instalar las dependencias creamos un archivo "txt" el cual guardamos todas las dependecias para una rapida instalacion.
+Su metodo de uso es utilizando PIP y es con el comando siguiente.
+
+````bash
+pip install -r .\dep.txt
+````
+
+## Estructura de las carpetas.
+
+````bash
+final-boss
+|-- data/
+|    |- raw/
+|    |    |__ products.csv
+|    |- processed/
+|        |__ cleaned_products.csv    
+|
+|-- notebooks/
+|    |__ exploration.ipynb
+|
+|-- src/
+|    |- analysis/
+|        |__ __init__.py
+|        |__ analysis.py
+|    |- decorators/
+|        |__ __init__.py
+|        |__ decorators.py
+|    |- scraping/
+|        |__ __init__.py
+|        |__ scraper.py
+|__ dep.txt
+|__ README.md
+|__ requirements.txt    
+````
+
+## Ejecucion del Scraper.
+
+Para ejecutar el scraper lo que hay que realizar es.
+
+````bash
+python .\src\scraping\scraper.py
+````
+
+Esto nos va a generar un CSV en la carpeta "RAW" dentro de la carpeta "DATA" llamado "products.csv"
+
+## Ejecucion para el analisis de datos.
+
+Para ejecutar el script para analisis de datos lo que hay que realizar es.
+
+````bash
+python .\src\analysys\analysys.py
+````
+
+
+Esto nos va a generar un CSV en la carpeta "PROCESSED" dentro de la carpeta "DATA" llamado "cleaned_products.csv"
+
+
+### Nancy Vasquez
