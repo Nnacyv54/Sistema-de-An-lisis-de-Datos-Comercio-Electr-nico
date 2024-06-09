@@ -33,4 +33,5 @@ Generamos documentacion detallada para interpretar nuestro programa.
 Testing [07]
 Creamos pruebas unitarias para asegurarnos de la fiabilidad del codigo.
 
+Descuento [08]
 Aplicacion de descuento del 30% a cada precio dentro de la funcion parse_product, la cual esta sujeta a su revision. Gracias
